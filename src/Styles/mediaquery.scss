@@ -1,0 +1,151 @@
+@import "colors";
+
+@media only screen and (max-width: 834px) {
+    .home {
+        align-items: flex-end;
+        padding-top: 5rem;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .about, .skills {
+        .content {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            min-height: 75vh;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
+    .home, .home2, .about, .skills { width: 100%;
+            > h1 {
+                font-size: 4rem;
+            }
+    }
+
+    .about > .about-con > .content {
+        padding: 1rem;
+        border-radius: 0 5rem 0 5rem;
+    }
+
+    .skills {
+        > .content {
+            > .icons {
+                flex-direction: column;
+                > div {
+                    margin: 1.5rem;
+                }
+            }
+        }
+        @keyframes displayimg {
+            to {
+                transform: translateX(-1.5rem);
+            }
+        }
+    }
+
+    footer {
+        > .content {
+            justify-content: center;
+    
+            > div > h2, > div > p, > div > h4, > div > div {
+                text-align: center;
+            }
+
+            > .first {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+}
+
+@mixin menutoggle($transform) {
+    .mobile-menu {
+        width: 100%;
+        height: 100vh;
+        background-color: $white;
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        visibility: visible;
+        transition: all .5s;
+        transform: $transform;
+
+        > .mobile-name {
+            font-size: 4rem;
+            color: $dark;
+            border-bottom: 2px solid $red;
+            cursor: pointer;
+        }
+    
+        > .mobile-a {
+            font-size: 1.7rem;
+            color: $dark;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all .3s;
+
+            &:hover {
+                color: $red;   
+            }
+        }
+    
+        > .mobile-close {
+            display: block;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 2.5rem;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            transition: all .3s;
+
+            &:hover {
+                color: $red;   
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    nav {
+        padding: 0 2.5rem;
+        
+        > .links {
+            display: none;
+        }
+
+        > .open-menu {
+            display: block;
+            transition: all .3s;
+
+            &:hover {
+                color: $red;   
+            }
+        }
+
+        .mobile-menu {
+            @include menutoggle(translateY(-100vh));
+        }
+
+        .mobile-menu-act {
+            @include menutoggle(translateY(0));
+        }
+    }
+
+    .home {
+        padding-top: 14vh !important;
+    }
+}

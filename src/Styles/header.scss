@@ -1,0 +1,50 @@
+@import "colors";
+
+nav {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    position: sticky; top: 0;
+    z-index: 999;
+    background-color: $white;
+
+    > h1 {
+        position: absolute;
+        font-size: 3.5rem;
+        color: $dark;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+    > .links {
+        display: flex;
+        gap: 2rem;
+    
+        > a {
+            font-size: 1.4rem;
+            color: $dark;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all .3s;
+
+            &:hover {
+                color: $red;   
+            }
+        }
+    }
+
+    > .mobile-menu {
+        visibility: hidden;
+    }
+
+    > .open-menu {
+        font-size: 2.5rem;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        display: none;
+    }
+}

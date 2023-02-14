@@ -1,0 +1,82 @@
+@import "colors";
+
+footer {
+    width: 100%;
+    min-height: 20rem;
+    padding: 2.5rem 5rem;
+    
+    > h2 {
+        font-size: 3rem;
+        margin: 2rem 0 4rem 0;
+        text-align: center;
+    }
+
+    > .content {
+        min-height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        > div {
+            width: 22.8rem;
+            margin-bottom: 2rem;
+
+            > .logo {
+                width: 100px;
+                height: 100px;
+                background-color: #666363;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                > img {
+                    width: 80%;
+                }
+            }
+
+            > h2 {
+                font-size: 2.5rem;
+                color: $red;
+                letter-spacing: 2px;
+                padding-left: 1rem;
+            }
+        }
+
+        > div {
+            h4 {
+                font-size: 2.5rem;
+                margin: .5rem 0;
+                text-align: right;
+            }
+
+            > div { text-align: right;
+                > i {
+                    font-size: 2.2rem;
+                    padding: .7rem;
+                    
+                    > a {
+                        color: black;
+                        transition: all .2s;
+                        &:hover {
+                            color: $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    > p {
+        font-size: 1.7rem;
+        letter-spacing: 2px;
+        word-spacing: 1rem;
+        color: $white;
+        text-align: center;
+        background-color: black;
+        padding: 1rem 0;
+    }
+}
