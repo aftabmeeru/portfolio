@@ -3,24 +3,42 @@
 @media only screen and (max-width: 834px) {
     .home {
         align-items: flex-end;
-        padding-top: 5rem;
+        padding: 5rem 0;
+        gap: 5rem;
+    }
+
+    .about .about-con .content {
+        > .img-container {
+            display: none;
+        }
+        > .who-iam {
+            width: 100%;
+        }
+    } 
+
+    .projects .projects-con .content {
+        border-radius: 0;
     }
 }
 
 @media only screen and (max-width: 749px) {
-    .about, .skills {
-        .content {
-            width: 100%;
-            margin: 0;
-            border-radius: 0;
-            min-height: 75vh;
+    .about, .skills, .projects  {
+        min-height: fit-content;
+        .about-con, .skills-con, .projects-con {
+            .content {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                min-height: fit-content;
+                background-color: #000;
+            }
         }
     }
 }
 
 @media only screen and (max-width: 575px) {
 
-    .home, .home2, .about, .skills { width: 100%;
+    .home, .home2, .about, .skills, .projects { width: 100%;
             > h1 {
                 font-size: 4rem;
             }
@@ -147,5 +165,14 @@
 
     .home {
         padding-top: 14vh !important;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .home > .home-2 > .img-container {
+        > .image {
+            width: 27rem;
+            height: 27rem;
+        }
     }
 }

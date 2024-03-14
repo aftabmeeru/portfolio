@@ -9,29 +9,38 @@ nav {
     padding: 0 5rem;
     position: sticky; top: 0;
     z-index: 999;
-    background-color: $white;
+    background-color: $bg;
 
     > h1 {
         position: absolute;
         font-size: 3.5rem;
-        color: $dark;
+        color: $white;
         letter-spacing: 1px;
         cursor: pointer;
+        transition: all .5s;
+
+        &:hover {
+            color: red;
+        }
     }
 
     > .links {
         display: flex;
         gap: 2rem;
+        padding-bottom: 1rem;
     
         > a {
             font-size: 1.4rem;
-            color: $dark;
+            color: #fff;
             text-transform: uppercase;
             font-weight: 700;
+            border-bottom: 2px solid transparent;
+            padding-bottom: .5rem;
             transition: all .3s;
 
             &:hover {
-                color: $red;   
+                color: red;
+                border-bottom: 2px solid red; 
             }
         }
     }
@@ -41,6 +50,7 @@ nav {
     }
 
     > .open-menu {
+        color: #fff;
         font-size: 2.5rem;
         cursor: pointer;
         background-color: transparent;

@@ -9,14 +9,15 @@ const Header = () => {
 
   return (
     <nav>
-      <div className={`mobile-menu ${menu? "mobile-menu-act": ""}`}>
+      <divs className={`mobile-menu ${menu? "mobile-menu-act": ""}`}>
         <MobileMenu menu={menu} setMenu={setMenu} />
-      </div>
+      </divs>
         <h1>Aftab</h1>
         <div className='links'>
             <HashLink to={"/#"}>Home</HashLink>
             <HashLink to={"/#about"}>About</HashLink>
             <HashLink to={"/#skills"}>Skills</HashLink>
+            <HashLink to={"/#projects"}>Projects</HashLink>
         </div>
         <div className="open-menu" onClick={() => setMenu(true)}><FaBars /></div>
     </nav>

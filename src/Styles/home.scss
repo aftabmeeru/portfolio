@@ -16,49 +16,128 @@
     background-color: $bg;
 }
 
+@mixin logo($width, $height) {
+    > .image {
+        position: relative;
+        width: $width;
+        height: $height;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -1rem 10rem;
+            background: linear-gradient(315deg, #00ccff, #d400d4);
+            transition: 0.5s;
+            animation: animate 4s linear infinite;
+        }
+
+        &:hover::before {
+            inset: -2rem 0px;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            } 
+            0% {
+                transform: rotate(360deg);
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            background-color: #162052;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        > .logo {
+            position: absolute;
+            inset: 2rem;
+            border: 6px solid #070a1c;
+            z-index: 3;
+            border-radius: 50%;
+            overflow: hidden;
+
+            > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(red, black);
+                object-fit: cover;
+            }
+        }
+    }
+}
+
 .home {
-    @include commonCode2(100vh, space-evenly, center);
+    @include commonCode2(90vh, space-evenly, center);
     flex-wrap: wrap-reverse;
 
     > .home-1 {
         margin-right: .5rem;
 
-        > h1 {
+        > .my-name {
             @include commonCode(5rem, $white);
             line-height: 5rem;
             letter-spacing: .2rem;
             font-weight: 500;
+
+            > span {
+                color: red;
+            }
         }
     
         > h5 {
             @include commonCode(1.7rem, $white);
-            margin-top: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+
+            > span {
+                color: red;
+            }
         }
 
         > p {
             @include commonCode(1.3rem, $white);
-            margin-top: 2rem;
         }
     
         > .links {
             display: flex;
     
             div {
-                @include commonCode(2rem, $white);
+                @include commonCode(3rem, $white);
                 margin-top: 2rem;
+                margin-left: 1rem;
                 display: flex;
                 gap: 1rem;
     
                 > li {
                     list-style-type: none;
                     cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     
                     > a {
+                        position: relative;
                         color: $white;
-                        transition: all .3s;
+                        padding: .5rem;
+                        line-height: 1.2px;
+                        border-radius: 50%;
+                        border: 3px solid transparent;
+                        transition: all .4s;
 
                         &:hover {
-                            color: $red;
+                            border-top: 3px solid #d400d4;
+                            border-bottom: 3px solid #00ccff;
                         }
                     }
                 }
@@ -67,23 +146,8 @@
         }
     }
 
-    > .home-2 {
-        > .logo {
-            height: 300px;
-            width: 300px;
-            border-radius: 50%;
-            background-color: #f46b6b;
-            overflow: hidden;
-            margin: 0 20px;
-
-            > img {
-                position: relative;
-                top: -20px;
-                left: 8.5%;
-                width: 80%;
-            }
-
-        }
+    > .home-2 > .img-container{
+        @include logo(34rem, 34rem);
     }
 }
 
@@ -96,6 +160,7 @@
 
 @mixin con() {
     width: 100%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,43 +203,63 @@
         }
         
         > .content {
-            @include commonCode3(70vh, $white);
+            @include commonCode3(70vh, #090c31);
             padding: 5rem;
             border-radius: 0 10rem 0 10rem;
-            
-            > p {
-                @include commonCode(1.5rem, $dark);
-                padding: 5rem 2rem;
-                word-spacing: 1.5rem;
-                letter-spacing: 1px;
-                font-weight: 500;
-                line-height: 2.5rem;
-                margin-left: 0;
+            display: flex;
+
+            .img-container {
+                width: 40%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include logo(30rem, 30rem);
             }
+            
+            .who-iam {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 5rem;
 
-            > div {
-                margin: 0 2rem;
+                > .developer {
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+        
+                    > .icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 2.5rem;
+                        padding: 1rem;
+                        border-radius: 50%;
+                    }
+                    > .react {
+                        color: #61dbfb;
+                        border: 2px solid #61dbfb;
+                    }
+                    > .wordpress {
+                        color: #00749C;
+                        border: 2px solid #00749C;
+                    }
+                    > .design {
+                        color: #f0e000;
+                        border: 2px solid #f0e000;
+                    }
 
-                > h2 {
-                    display: inline-block;
-                    font-size: 2rem;
-                    font-weight: 500;
-                    color: $dark;
-                    border-bottom: 1px solid $dark;
-                    margin-bottom: 1rem;
-                    padding-bottom: .5rem;
-                }
-
-                > p {
-                    font-size: 1.5rem;
-                    color: $dark;
-                    margin-left: 5px;
-                    line-height: 2.5rem;
-
-                    > span {
-                        color: $red;
-                        font-size: 1rem;
-                        margin-right: 5px;
+                    > .content {
+                        > h3 {
+                            font-size: 2rem;
+                            color: white;
+                        }
+                        > p {
+                            font-size: 1.5rem;
+                            color: white;
+                        }
                     }
                 }
             }
@@ -185,19 +270,20 @@
 @mixin icons($bgColor, $animation) {
     animation: $animation;
     background-color: $bgColor;
-    padding: 1.5rem;
-    line-height: 1.5rem;
+    padding: .7rem;
     margin: 1rem 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
     cursor: pointer;
     transition: all .5s;
-    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
 }
 
 .skills {
     @include commonCode2( 100vh, center, center);
-    padding: 7.5rem 0;
+    padding: 7.5rem 0 0 0;
 
     > .skills-con {
         @include con();
@@ -207,8 +293,9 @@
         }
 
         > .content {
-            @include commonCode3( 70vh, black);
+            @include commonCode3( 70vh, #090c31);
             padding: 2rem 0;
+            border-radius: 0 15rem 0 15rem;
             
             > .icons {
                 position: relative;
@@ -218,12 +305,14 @@
                 align-items: center;
                 justify-content: center;
                 
-                > .html { @include icons (rgb(248, 121, 74), icon1 2s linear infinite alternate) }
-                > .css { @include icons (rgb(96, 149, 247), icon2 2s linear infinite alternate) }
-                > .js { @include icons(rgb(245, 178, 55), icon3 2s linear infinite alternate) }
-                > .sass { @include icons(rgb(212, 4, 4), icon4 2s linear infinite alternate) }
-                > .bstrap { @include icons(rgb(179, 5, 179), icon5 2s linear infinite alternate) }
-                > .react{@include icons(rgb(39, 213, 236),icon6 2s linear infinite alternate)}                
+                > .react{@include icons(#61dbfb,icon1 2s linear infinite alternate)}                
+                > .js { @include icons(#F0DB4F, icon2 2s linear infinite alternate) }
+                > .wordpress { @include icons(#00749C, icon1 2s linear infinite alternate) }
+                > .mysql{@include icons(#00758F,icon2 2s linear infinite alternate)}                
+                > .html { @include icons (#f06529, icon1 2s linear infinite alternate) }
+                > .css { @include icons (#264de4, icon2 2s linear infinite alternate) }
+                > .bootstrap { @include icons(#563d7c, icon1 2s linear infinite alternate) }
+                > .sass { @include icons(#cc6699, icon2 2s linear infinite alternate) }
             }
         }
     }
@@ -231,7 +320,141 @@
 
 @keyframes icon1 { from{transform: translateX(-10rem);} to { transform: translateX(10rem); } }
 @keyframes icon2 { from{transform: translateX(10rem);} to { transform: translateX(-10rem); } }
-@keyframes icon3 { from{transform: translateX(-10rem);} to { transform: translateX(10rem); } }
-@keyframes icon4 { from{transform: translateX(10rem);} to { transform: translateX(-10rem); } }
-@keyframes icon5 { from{transform: translateX(-10rem);} to { transform: translateX(10rem); } }
-@keyframes icon6 { from{transform: translateX(10rem);} to { transform: translateX(-10rem); } }
+
+.projects {
+    @include commonCode2( 100vh, center, center);
+    padding: 7.5rem 0;
+
+    > .projects-con {
+        @include con();
+
+        > h2 {
+            @include mainHead();
+        }
+
+        > .content {
+            @include commonCode3( 70vh, #090c31);
+            padding: 2rem;
+            border-radius: 0 10rem 0 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+
+            > .project {
+                width: 28rem;
+                background-color: #070a1c;
+                border-radius: 2rem;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                transition: all .2s;
+
+                &:hover {
+                    transform: translate(0, -2%);
+                }
+
+                > .img {
+                    width: 100%;
+                    height: 15rem;
+                    border-radius: 2rem;
+                    overflow: hidden;
+
+                    > img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                > .desc {
+                    > h2 {
+                        font-size: 1.7rem;
+                        color: #fff;
+                        padding-bottom: .5rem;
+                    }
+
+                    > p {
+                        font-size: 1.3rem;
+                        color: #fff;
+                        word-spacing: 1px;
+                        letter-spacing: .5px;
+                    }
+                }
+
+                > .lang {
+                    display: flex;
+                    gap: 1rem;
+
+                    > span {
+                        border-radius: 5px;
+                        padding: .5rem 2rem; 
+                        cursor: pointer;
+                        transition: all .3s;
+
+                        &:hover {
+                            color: #000;
+                            background: linear-gradient(to right, #61dbfb, #cc6699);
+                        }
+                    }
+                    > .react {
+                        color: #61dbfb;
+                        border: 1px solid #61dbfb;                      
+                    }
+                    > .sass {
+                        color: #cc6699;
+                        border: 1px solid #cc6699;                       
+                    }
+                }
+
+                > .buttons {
+                    display: flex;
+                    gap: 1rem;
+
+                    > button {
+                        width: 8rem;
+                        color: #fff;
+                        border: 1px solid #fff;
+                        border-radius: 5px;
+                        background-color: transparent;
+
+                        > span {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+                            cursor: pointer;
+                            width: 100%;
+                            height: 2.5rem;
+                            position: relative;
+                            transition: 0.5s;
+
+                            &::after {
+                                // content: '»';
+                                content: '>>';
+                                color: red;
+                                position: absolute;
+                                opacity: 0;
+                                top: 20%;
+                                right: -3px;
+                                transition: all .5s;
+                            }
+
+                            &:hover {
+                                color: red;
+                                top: 0;
+                                right: 8px;
+                            }
+                        }
+                           
+                        &:hover span::after {
+                            opacity: 1;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
