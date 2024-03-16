@@ -1,6 +1,6 @@
 {
-  "homepage": "https://aftabmeeru.github.io/portfolio",
   "name": "portfolio",
+  "homepage": "https://aftabmeeru.github.io/portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

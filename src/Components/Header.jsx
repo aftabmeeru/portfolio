@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
 
 const Header = () => {
@@ -14,10 +15,10 @@ const Header = () => {
       </divs>
         <h1>Aftab</h1>
         <div className='links'>
-            <HashLink to={"/#"}>Home</HashLink>
-            <HashLink to={"/#about"}>About</HashLink>
-            <HashLink to={"/#skills"}>Skills</HashLink>
-            <HashLink to={"/#projects"}>Projects</HashLink>
+            <HashLink to={"#"}>Home</HashLink>
+            <HashLink to={"#about"}>About</HashLink>
+            <HashLink to={"#skills"}>Skills</HashLink>
+            <HashLink to={"#projects"}>Projects</HashLink>
         </div>
         <div className="open-menu" onClick={() => setMenu(true)}><FaBars /></div>
     </nav>

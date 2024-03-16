@@ -10,10 +10,10 @@ import './Styles/mediaquery.scss';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/portfolio'>
       <Header />
       <Routes>
-        <Route path='/' element={ <Home /> } />
+        <Route exact path='/' element={ <Home /> } />
       </Routes>
       <Footer />
     </Router>
