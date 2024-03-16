@@ -120,7 +120,7 @@ const Home = () => {
                   </div>
                   <div className="buttons">
                     <button><span>Demo</span></button>
-                    <button><span>Source</span></button>
+                    <a href='https://github.com/aftabmeeru/portfolio' target='blank'><span>Source</span></a>
                   </div>
                 </div>
               ))

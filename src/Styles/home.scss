@@ -412,8 +412,10 @@
                     display: flex;
                     gap: 1rem;
 
-                    > button {
+                    > button,
+                    > a {
                         width: 8rem;
+                        font-size: 1.3rem;
                         color: #fff;
                         border: 1px solid #fff;
                         border-radius: 5px;
