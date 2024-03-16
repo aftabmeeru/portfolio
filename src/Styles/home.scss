@@ -352,10 +352,6 @@
                 gap: 1.5rem;
                 transition: all .2s;
 
-                &:hover {
-                    transform: translate(0, -2%);
-                }
-
                 > .img {
                     width: 100%;
                     height: 15rem;
@@ -435,7 +431,6 @@
                             &::after {
                                 // content: '»';
                                 content: '>>';
-                                color: red;
                                 position: absolute;
                                 opacity: 0;
                                 top: 20%;
@@ -444,7 +439,6 @@
                             }
 
                             &:hover {
-                                color: red;
                                 top: 0;
                                 right: 8px;
                             }

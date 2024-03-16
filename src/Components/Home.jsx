@@ -119,7 +119,7 @@ const Home = () => {
                     <span className='sass'>Sass</span>
                   </div>
                   <div className="buttons">
-                    <button><span>Demo</span></button>
+                    <a href='https://aftabmeeru.github.io/portfolio/' target='blank'><span>Demo</span></a>
                     <a href='https://github.com/aftabmeeru/portfolio' target='blank'><span>Source</span></a>
                   </div>
                 </div>
