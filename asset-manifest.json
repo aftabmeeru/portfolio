@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.d0a155d5.css",
-    "main.js": "/portfolio/static/js/main.6f015dae.js",
+    "main.js": "/portfolio/static/js/main.1ff973a7.js",
     "static/media/logo.png": "/portfolio/static/media/logo.d3deca1b937838382987.png",
     "static/media/redbus-portfolio.png": "/portfolio/static/media/redbus-portfolio.f2e3f740f01b330cb8f3.png",
     "static/media/ecommerce-portfolio.jpg": "/portfolio/static/media/ecommerce-portfolio.f242cfbde85bd1259d70.jpg",
     "static/media/weather-portfolio.avif": "/portfolio/static/media/weather-portfolio.7547d768b634587f3144.avif",
     "index.html": "/portfolio/index.html",
     "main.d0a155d5.css.map": "/portfolio/static/css/main.d0a155d5.css.map",
-    "main.6f015dae.js.map": "/portfolio/static/js/main.6f015dae.js.map"
+    "main.1ff973a7.js.map": "/portfolio/static/js/main.1ff973a7.js.map"
   },
   "entrypoints": [
     "static/css/main.d0a155d5.css",
-    "static/js/main.6f015dae.js"
+    "static/js/main.1ff973a7.js"
   ]
 }
