@@ -11,6 +11,7 @@ const MobileMenu = ({ setMenu }) => {
             <HashLink className='mobile-a' onClick={() => setMenu(false)} to={"/#"}>Home</HashLink>
             <HashLink className='mobile-a' onClick={() => setMenu(false)} to={"/#about"}>About</HashLink>
             <HashLink className='mobile-a' onClick={() => setMenu(false)} to={"/#skills"}>Skills</HashLink>
+            <HashLink className='mobile-a' onClick={() => setMenu(false)} to={"/#projects"}>Projects</HashLink>
             <div className="mobile-close" onClick={() => setMenu(false)}><FaTimes /></div>
         </div>
     </>
