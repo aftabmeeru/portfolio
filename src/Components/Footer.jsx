@@ -19,8 +19,8 @@ const Footer = () => {
         <div>
           <h4>Follow Me</h4>
           <div>
-            <i><a href="https://www.linkedin.com/in/aftab-meeru-948115242" target="blank"><AiFillLinkedin /></a></i>
-            <i><a href="https://github.com/aftabm07" target="blank"><AiFillGithub /></a></i>
+            <i><a href="https://www.linkedin.com/in/meeru-ameer-aftab-888010235/" target="blank"><AiFillLinkedin /></a></i>
+            <i><a href="https://github.com/aftabmeeru" target="blank"><AiFillGithub /></a></i>
           </div>
         </div>
       </div>

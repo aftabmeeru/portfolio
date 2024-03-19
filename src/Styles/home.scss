@@ -193,7 +193,7 @@
 
 .about {
     @include commonCode2(100vh, center, center);
-    padding-top: 2.5rem;
+    padding-top: 5rem;
 
     > .about-con {
         @include con();

@@ -36,6 +36,16 @@
     }
 }
 
+@media only screen and (max-width: 629px) {
+    .projects > .projects-con > .content > .project {
+        width: 90%;
+        > .img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
 @media only screen and (max-width: 575px) {
 
     .home, .home2, .about, .skills, .projects { width: 100%;
@@ -165,6 +175,17 @@
 
     .home {
         padding-top: 14vh !important;
+    }
+
+    .projects > .projects-con > .content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        > .project {
+            width: 100%;
+            > .img {
+                width: 100%;
+            }
+        }
     }
 }
 
